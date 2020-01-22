@@ -14,6 +14,11 @@ int main(int argc, char* argv[]) {
 	// Test Case
 	//listThing.remove("thingy");
 
+	if (argc == 1) {
+		cout << "Please enter one of the following options: \"add\" \"remove\" \"printList\" \"printDay\"." << endl;
+		return 0;
+	}
+
 	if (static_cast<string>(argv[1]) == "add") {
 		//cout << "add function ran!" << endl;
 		listThing.add(static_cast<string>(argv[2]), static_cast<string>(argv[3]));
@@ -30,11 +35,8 @@ int main(int argc, char* argv[]) {
 		//cout << "printDay function ran!" << endl;
 		listThing.printDaysTasks(argv[2]);
 	}
-	/*else if (argv[0] != "yeet yeet yeet mah bones!") {
-		cout << "argv[1] did not trigger anything" << endl;
-	}*/
 	else {
-		cout << "ya done broked it!" << endl;
+		cout << "Please enter one of the following options: \"add\" \"remove\" \"printList\" \"printDay\"." << endl;
 	}
 
 	return 0;

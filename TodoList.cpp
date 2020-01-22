@@ -45,15 +45,17 @@ void TodoList::printTodoList() {
 	ifstream fin;
 	string text;
 
-	cout << endl << "To do List: " << endl;
+	cout << endl << "To do List: " << endl << endl;
 
 	fin.open("todoList.txt");
 
 	while (fin) {
 
 		getline(fin, text);
+		if (text != "")
 		cout << text << endl;
 		getline(fin, text);
+		if (text != "")
 		cout << text << endl << endl;
 	}
 	fin.close();
