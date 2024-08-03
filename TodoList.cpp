@@ -22,15 +22,15 @@ int TodoList::remove(string _task) {
 	vector<string> dates;
 	vector<string> tasks;
 	TodoList TodoList;
-	//vector<int> tasksToIgnore;
+	vector<int> tasksToIgnore;
 	ofstream fout;
 	
 	//find tasks to delete
 	TodoList.Copyifyer(dates, tasks);
-	fout.open("todolist.txt");// NOT appending to file
+	fout.open("todolist.txt");
 	for (int i = 0; i < tasks.size(); i++) {
 		if (_task == tasks.at(i)) {
-			//tasksToIgnore.push_back(i);		
+			tasksToIgnore.push_back(i);		
 		}
 		else {
 			fout << dates.at(i) << endl;
@@ -80,9 +80,6 @@ int TodoList::Findifyer(vector<string> days, string toFind) {
 		if (static_cast<string>(toFind) == days.at(i)) {
 			return i;
 		}
-		else {
-			//do nothing else, have a nice day :)
-		}
 	}
 	return -1;
 }
@@ -97,5 +94,5 @@ void TodoList::Copyifyer(vector<string> &dates, vector<string> &tasks) {
 		getline(fileIn, input);
 		tasks.push_back(input);
 	}
-	fileIn.close(); //there once was a man from france, he really really liked to dance. his name was joe, and he was an eskimo. he had a pet seal, who really liked to squeal. he was really fat, and it always wore a hat.
+	fileIn.close(); 
 }
