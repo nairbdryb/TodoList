@@ -9,10 +9,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-	TodoList listThing;
-	
-	// Test Case
-	//listThing.remove("thingy");
+	TodoList list;
 
 	if (argc == 1) {
 		cout << "Please enter one of the following options: \"add\" \"remove\" \"printList\" \"printDay\"." << endl;
@@ -21,19 +18,19 @@ int main(int argc, char* argv[]) {
 
 	if (static_cast<string>(argv[1]) == "add") {
 		//cout << "add function ran!" << endl;
-		listThing.add(static_cast<string>(argv[2]), static_cast<string>(argv[3]));
+		list.add(static_cast<string>(argv[2]), static_cast<string>(argv[3]));
 	}
 	else if (static_cast<string>(argv[1]) == "remove") {
 		//cout << "remove function ran!" << endl;
-		listThing.remove(static_cast<string>(argv[2]));
+		list.remove(static_cast<string>(argv[2]));
 	}
 	else if (static_cast<string>(argv[1]) == "printList") {
 		//cout << "print function ran!" << endl;
-		listThing.printTodoList();
+		list.printTodoList();
 	}
 	else if (static_cast<string>(argv[1]) == "printDay") {
 		//cout << "printDay function ran!" << endl;
-		listThing.printDaysTasks(argv[2]);
+		list.printDaysTasks(argv[2]);
 	}
 	else {
 		cout << "Please enter one of the following options: \"add\" \"remove\" \"printList\" \"printDay\"." << endl;
